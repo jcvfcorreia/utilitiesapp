@@ -1,0 +1,36 @@
+<% include ../partials/header %>
+<div class="container">
+    <h1><center><u>Água - Index</u></center></h1>
+    <div style="padding-top: 10px;"></div>
+    <table class="table table-hover">
+        <thead>
+            <!-- <th>ID</th> -->
+            <th>DATA</th>
+            <th>VALOR</th> 
+            <th></th>       
+        </thead>
+        <tbody>            
+            <% data.forEach(function(row){ %>
+            <tr>
+                <!-- <td><a href="agua/show/<%= row.id %>"><%= row.id %></a></td> -->
+                <td><%= row.data %></td>
+                <td><%= row.valor %></td>
+                <td>
+                    <div style="float: left; padding-right: 10px;">
+                        <a href="agua/show/<%= row.id %>" class="btn btn-primary" onclick="return confirm('Deseja editar o registo <%= row.id %>?')">Edit</a>                    
+                    </div>
+                    <div style="float: left">
+                        <form action="agua/delete/<%= row.id %>?_method=DELETE" method="POST">                    
+                            <button class="btn btn-danger" onclick="return confirm('Deseja eliminar o registo <%= row.id %>?')">Delete</button>
+                        </form>
+                    </div>                  
+                </td>        
+            </tr>
+            <% }) %>
+        </tbody>        
+    </table>
+    <br>
+    <a href="/" class="btn btn-primary">Back</a>
+    <a href="agua/new" class="btn btn-success">New</a>
+</div>
+<% include ../partials/footer %>

@@ -1,0 +1,25 @@
+<% include ../partials/header %>
+<div class="container">
+    <form action="/agua/show/<%= data.id %>" method="POST" class="form-horizontal">
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="valor">Valor</label>
+            <div class="col-sm-5">
+                <input class="form-control" type="number" name="valor" id="valor" value="<%= data.valor %>">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-sm-2 control-label" for="data">Data</label>
+            <div class="col-sm-5">
+                <input class="form-control" type="date" name="data" id="data" value="<%= data.data %>">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-5">
+                <a href="/agua" class="btn btn-primary">Back</a>
+                <button type="submit" class="btn btn-primary">Submit</button>              
+            </div>
+          </div>
+    </form>
+</div>
+
+<% include ../partials/footer %>
